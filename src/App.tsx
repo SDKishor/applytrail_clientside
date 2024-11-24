@@ -1,12 +1,18 @@
-import { ModeToggle } from './components/themeModeToggle';
-import { Button } from './components/ui/button';
+import { Outlet } from 'react-router-dom';
+import Navbar from './components/navbar/navbar';
 
 function App() {
   return (
     <>
-      <p className="text-2xl font-bold">Hello</p>
-      <Button>Button</Button>
-      <ModeToggle />
+      <header className="sticky top-0 z-50">
+        <Navbar />
+      </header>
+      <main>
+        <Outlet />
+      </main>
+      <footer>
+        <h1>Footer</h1>
+      </footer>
     </>
   );
 }
