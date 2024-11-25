@@ -8,7 +8,7 @@ function App() {
       <header className="sticky top-0 z-50">
         <Navbar />
       </header>
-      <main>
+      <main className="container mx-auto max-w-7xl">
         <Outlet />
       </main>
       <Footer />
