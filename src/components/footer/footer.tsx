@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mt-5 border-t border-border bg-background py-6">
+    <footer className="z-50 border-t border-border bg-background py-6">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-end justify-between space-y-4 py-10 md:flex-row md:space-y-0">
           {/* Left Side: Logo and Tagline */}

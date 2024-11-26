@@ -11,12 +11,12 @@ const Navbar = () => {
   const [user] = useState<boolean>(true);
 
   return (
-    <nav className="border-b border-border bg-background">
+    <nav className="font-sen border-b border-border bg-background">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <NavLink to="/" className="text-xl font-bold text-primary">
-            <div className="flex w-8 gap-2">
+            <div className="flex w-8 gap-2 font-heading">
               <img
                 className="hidden w-full dark:block"
                 src="/src/assets/logo_light.svg"
