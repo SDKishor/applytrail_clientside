@@ -30,7 +30,7 @@ export default function HowItWorks() {
 
   return (
     <section className="px-6 py-12">
-      <h1 className="font-heading text-center text-3xl font-bold">
+      <h1 className="text-center font-heading text-3xl font-bold">
         How It Works
       </h1>
       <div className="my-10">
@@ -46,7 +46,7 @@ export default function HowItWorks() {
               <div className="h-[2px] w-full bg-[#353B4C] dark:bg-white"></div>
             </div>
           </div>
-          <div className="h-full w-[2px] bg-[#353B4C]"></div>
+          <div className="h-full w-[2px] bg-[#353B4C] dark:bg-white"></div>
           <div className="flex-1">
             <div className="flex h-full flex-col items-start justify-center pl-4 lg:pl-5">
               <h2 className="font-heading text-lg font-bold md:text-2xl">
@@ -71,11 +71,11 @@ export default function HowItWorks() {
               </p>
             </div>
           </div>
-          <div className="h-full w-[2px] bg-[#353B4C]"></div>
+          <div className="h-full w-[2px] bg-[#353B4C] dark:bg-white"></div>
 
           <div className="flex flex-1">
             <div className="flex w-12 items-center md:w-32">
-              <div className="h-[2px] w-full bg-[#353B4C]"></div>
+              <div className="h-[2px] w-full bg-[#353B4C] dark:bg-white"></div>
             </div>
             <div className="flex flex-1 items-center justify-start">
               <Button variant={'outline2'} size={'zero'}>
@@ -95,10 +95,10 @@ export default function HowItWorks() {
               </Button>
             </div>
             <div className="flex w-12 items-center md:w-32">
-              <div className="h-[2px] w-full bg-[#353B4C]"></div>
+              <div className="h-[2px] w-full bg-[#353B4C] dark:bg-white"></div>
             </div>
           </div>
-          <div className="h-full w-[2px] bg-[#353B4C]"></div>
+          <div className="h-full w-[2px] bg-[#353B4C] dark:bg-white"></div>
           <div className="flex-1">
             <div className="flex h-full flex-col items-start justify-center pl-4 lg:pl-5">
               <h2 className="font-heading text-lg font-bold md:text-2xl">
