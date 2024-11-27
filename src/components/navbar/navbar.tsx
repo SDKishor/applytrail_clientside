@@ -44,17 +44,19 @@ const Navbar = () => {
             >
               Home
             </NavLink>
-            <NavLink
-              to="/pricing"
-              className={({ isActive }) =>
-                cn(
-                  'text-sm font-medium transition hover:text-primary',
-                  isActive ? 'text-primary' : 'text-muted-foreground'
-                )
-              }
-            >
-              Pricing
-            </NavLink>
+            {user && (
+              <NavLink
+                to="/dashboard"
+                className={({ isActive }) =>
+                  cn(
+                    'text-sm font-medium transition hover:text-primary',
+                    isActive ? 'text-primary' : 'text-muted-foreground'
+                  )
+                }
+              >
+                Dashboard
+              </NavLink>
+            )}
             <NavLink
               to="/about"
               className={({ isActive }) =>
@@ -106,17 +108,19 @@ const Navbar = () => {
             >
               Home
             </NavLink>
-            <NavLink
-              to="/pricing"
-              className={({ isActive }) =>
-                cn(
-                  'block text-sm font-medium transition hover:text-primary',
-                  isActive ? 'text-primary' : 'text-muted-foreground'
-                )
-              }
-            >
-              Pricing
-            </NavLink>
+            {user && (
+              <NavLink
+                to="/dashboard"
+                className={({ isActive }) =>
+                  cn(
+                    'block text-sm font-medium transition hover:text-primary',
+                    isActive ? 'text-primary' : 'text-muted-foreground'
+                  )
+                }
+              >
+                Dashboard
+              </NavLink>
+            )}
             <NavLink
               to="/about"
               className={({ isActive }) =>

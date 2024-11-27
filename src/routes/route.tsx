@@ -3,6 +3,7 @@ import App from '../App';
 import { createBrowserRouter } from 'react-router-dom';
 import { DashboardPage } from '@/pages/dashboard/dashboardPage';
 import { DashboardHome } from '@/pages/dashboardHomePage/dashboardHomepage';
+import { AllApplicationPage } from '@/pages/all_application_Page/allApplicationPage';
 
 const route = createBrowserRouter(
   [
@@ -24,8 +25,8 @@ const route = createBrowserRouter(
               element: <DashboardHome />,
             },
             {
-              path: 'analytics',
-              element: <h1>Analytics</h1>,
+              path: 'applications',
+              element: <AllApplicationPage />,
             },
             {
               path: 'profile',

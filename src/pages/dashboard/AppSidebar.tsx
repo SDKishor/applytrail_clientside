@@ -27,7 +27,7 @@ const items = [
   },
   {
     title: 'All Applications',
-    url: '/deshboard/applications',
+    url: '/dashboard/applications',
     icon: FileUser,
   },
   {
@@ -50,7 +50,7 @@ const items = [
 
 export const AppSidebar = () => {
   return (
-    <div className="flex">
+    <div className="flex min-h-[80vh]">
       <Sidebar className="h-full" collapsible="icon" variant="floating">
         <SidebarContent className="fixed">
           <SidebarGroup>
