@@ -43,9 +43,11 @@ const mockData2: PertialReminderData = {
 };
 
 export const DashboardHome = () => {
+  const user = null;
   return (
     <div className="container mx-auto mt-8 min-h-svh px-4 sm:px-6 lg:px-8">
-      <h1 className="text-2xl font-bold">Overview</h1>
+      <h4 className="mb-4 text-lg">🖐 Hi {user ?? 'Kishor'}. Welcome</h4>
+      <h2 className="text-2xl font-bold">Overview</h2>
       <p className="mt-2 text-muted-foreground">
         Here's a quick look at your progress.
       </p>
