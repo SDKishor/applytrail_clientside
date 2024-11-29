@@ -32,18 +32,18 @@ const items = [
   },
   {
     title: 'Analytics',
-    url: '/dashboard/analytics',
+    url: 'analytics',
     icon: ChartNoAxesCombined,
   },
 
   {
     title: 'Profile',
-    url: 'dashboard/profile',
+    url: 'profile',
     icon: UserRound,
   },
   {
     title: 'Settings',
-    url: 'dashboard/settings',
+    url: 'settings',
     icon: Settings,
   },
 ];

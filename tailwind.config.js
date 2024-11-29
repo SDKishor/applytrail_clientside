@@ -4,6 +4,10 @@ export default {
   content: ['./index.html', './src/**/*.{ts,tsx,js,jsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        'fade-center':
+          'radial-gradient(circle, hsl(158, 74%, 55%) 0%, transparent 99%)',
+      },
       fontFamily: {
         sans: ['Source Sans \\ 3', 'sans-serif'],
         heading: ['Space Grotesk', 'sans-serif'],

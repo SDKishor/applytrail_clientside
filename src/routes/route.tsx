@@ -4,6 +4,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { DashboardPage } from '@/pages/dashboard/dashboardPage';
 import { DashboardHome } from '@/pages/dashboardHomePage/dashboardHomepage';
 import { AllApplicationPage } from '@/pages/all_application_Page/allApplicationPage';
+import { ProfilePage } from '@/pages/profile_page/profilePage';
 
 const route = createBrowserRouter(
   [
@@ -29,8 +30,12 @@ const route = createBrowserRouter(
               element: <AllApplicationPage />,
             },
             {
+              path: 'analytics',
+              element: <h1>Analytics</h1>,
+            },
+            {
               path: 'profile',
-              element: <h1>Profile</h1>,
+              element: <ProfilePage />,
             },
             {
               path: 'settings',
