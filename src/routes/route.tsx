@@ -5,6 +5,8 @@ import { DashboardPage } from '@/pages/dashboard/dashboardPage';
 import { DashboardHome } from '@/pages/dashboardHomePage/dashboardHomepage';
 import { AllApplicationPage } from '@/pages/all_application_Page/allApplicationPage';
 import { ProfilePage } from '@/pages/profile_page/profilePage';
+import { SettingPage } from '@/pages/setting_page/settingPage';
+import { ReminderPage } from '@/pages/reminder_page/reminderPage';
 
 const route = createBrowserRouter(
   [
@@ -34,12 +36,16 @@ const route = createBrowserRouter(
               element: <h1>Analytics</h1>,
             },
             {
+              path: 'reminders',
+              element: <ReminderPage />,
+            },
+            {
               path: 'profile',
               element: <ProfilePage />,
             },
             {
               path: 'settings',
-              element: <h1>Settings</h1>,
+              element: <SettingPage />,
             },
           ],
         },

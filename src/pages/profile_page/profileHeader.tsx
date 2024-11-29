@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button';
 import { Mail, UserRound } from 'lucide-react';
-import React from 'react';
 
 export const ProfileHeader = () => {
   return (

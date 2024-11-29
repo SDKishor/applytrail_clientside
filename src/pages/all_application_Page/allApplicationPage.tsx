@@ -109,7 +109,9 @@ const handleEdit = (id: string) => {
 export const AllApplicationPage = () => {
   return (
     <div className="container mt-8 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-2xl font-bold">All Job Applications</h2>
+      <h2 className="mb-3 font-heading text-2xl font-bold">
+        All Job Applications
+      </h2>
 
       <JobApplicationsTable data={mockData} onEdit={handleEdit} />
     </div>

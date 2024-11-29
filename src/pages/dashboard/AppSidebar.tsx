@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/sidebar';
 import { cn } from '@/lib/utils';
 import {
+  BellRing,
   ChartNoAxesCombined,
   FileUser,
   Home,
@@ -35,7 +36,11 @@ const items = [
     url: 'analytics',
     icon: ChartNoAxesCombined,
   },
-
+  {
+    title: 'Reminders',
+    url: 'reminders',
+    icon: BellRing,
+  },
   {
     title: 'Profile',
     url: 'profile',
