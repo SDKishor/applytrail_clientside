@@ -58,7 +58,7 @@ const Navbar = () => {
               </NavLink>
             )}
             <NavLink
-              to="/about"
+              to="/Blogs"
               className={({ isActive }) =>
                 cn(
                   'text-sm font-medium transition hover:text-primary',
@@ -66,7 +66,7 @@ const Navbar = () => {
                 )
               }
             >
-              About
+              Blogs
             </NavLink>
             <ModeToggle />
             {!user ? (
@@ -122,7 +122,7 @@ const Navbar = () => {
               </NavLink>
             )}
             <NavLink
-              to="/about"
+              to="/Blogs"
               className={({ isActive }) =>
                 cn(
                   'block text-sm font-medium transition hover:text-primary',
@@ -130,7 +130,7 @@ const Navbar = () => {
                 )
               }
             >
-              About
+              Blogs
             </NavLink>
             <div className="flex w-full flex-col items-center space-y-2">
               <ModeToggle />

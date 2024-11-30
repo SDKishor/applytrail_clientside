@@ -7,6 +7,7 @@ import { AllApplicationPage } from '@/pages/all_application_Page/allApplicationP
 import { ProfilePage } from '@/pages/profile_page/profilePage';
 import { SettingPage } from '@/pages/setting_page/settingPage';
 import { ReminderPage } from '@/pages/reminder_page/reminderPage';
+import BlogPage from '@/pages/blog_page/blogPage';
 
 const route = createBrowserRouter(
   [
@@ -51,7 +52,7 @@ const route = createBrowserRouter(
         },
         {
           path: 'blogs',
-          element: <h1>Blogs</h1>,
+          element: <BlogPage />,
         },
       ],
     },
