@@ -8,6 +8,7 @@ import { ProfilePage } from '@/pages/profile_page/profilePage';
 import { SettingPage } from '@/pages/setting_page/settingPage';
 import { ReminderPage } from '@/pages/reminder_page/reminderPage';
 import BlogPage from '@/pages/blog_page/blogPage';
+import { AnalyticsPage } from '@/pages/analytics_page/analyticsPage';
 
 const route = createBrowserRouter(
   [
@@ -34,7 +35,7 @@ const route = createBrowserRouter(
             },
             {
               path: 'analytics',
-              element: <h1>Analytics</h1>,
+              element: <AnalyticsPage />,
             },
             {
               path: 'reminders',

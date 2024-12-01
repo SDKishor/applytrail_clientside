@@ -11,7 +11,7 @@ const Navbar = () => {
   const [user] = useState<boolean>(true);
 
   return (
-    <nav className="font-sen border-b border-border bg-background">
+    <nav className="font-sen border-b border-primary bg-background">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -19,12 +19,12 @@ const Navbar = () => {
             <div className="flex w-8 gap-2 font-heading">
               <img
                 className="hidden w-full dark:block"
-                src="/src/assets/logo_light.svg"
+                src="./logo_light.svg"
                 alt="Logo"
               />
               <img
                 className="w-full dark:hidden"
-                src="/src/assets/logo_dark.svg"
+                src="./logo_dark.svg"
                 alt="Logo"
               />
               ApplyTrail

@@ -83,11 +83,9 @@ const BlogPage: React.FC = () => {
     fetchPopularBlogs();
   }, [page, itemsPerPage, searchQuery]);
 
-  console.log(blogs);
-
   return (
     <div className="p-6">
-      <h1 className="mb-6 text-2xl font-bold">Latest Blogs</h1>
+      <h1 className="mb-6 font-heading text-2xl font-bold">Latest Blogs</h1>
 
       {/* Search Bar */}
 
@@ -101,16 +99,15 @@ const BlogPage: React.FC = () => {
         >
           <Input
             onChange={(e) => setSearchTag(e.target.value)}
-            placeholder="Search tags for blog posts"
-            className=""
+            placeholder="Search tags here..."
+            className="max-sm:placeholder:text-xs"
           />
-          <Button
+          <button
             type="submit"
-            variant={'ghost'}
-            className="absolute right-2 top-0"
+            className="absolute right-4 top-1/2 -translate-y-1/2"
           >
             <Search />
-          </Button>
+          </button>
         </form>
         <div className="">
           <Select onValueChange={(value) => setItemsPerPage(Number(value))}>
@@ -144,7 +141,7 @@ const BlogPage: React.FC = () => {
         <Button
           onClick={() => setPage(page - 1)}
           disabled={page === 1}
-          className="bg-blue-500 text-white"
+          className="font-bold text-foreground"
         >
           Previous
         </Button>
@@ -154,7 +151,7 @@ const BlogPage: React.FC = () => {
         <Button
           onClick={() => setPage(page + 1)}
           disabled={page === totalPages}
-          className="bg-blue-500 text-white"
+          className="font-bold text-foreground"
         >
           Next
         </Button>

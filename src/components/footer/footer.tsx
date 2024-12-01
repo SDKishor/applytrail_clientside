@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="z-50 border-t border-border bg-background py-6">
+    <footer className="z-50 border-t border-primary bg-background py-6">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-end justify-between space-y-4 py-10 md:flex-row md:space-y-0">
           {/* Left Side: Logo and Tagline */}
@@ -12,12 +12,12 @@ const Footer: React.FC = () => {
                 <div className="flex w-8 gap-2">
                   <img
                     className="hidden w-full dark:block"
-                    src="/src/assets/logo_light.svg"
+                    src="./logo_light.svg"
                     alt="Logo"
                   />
                   <img
                     className="w-full dark:hidden"
-                    src="/src/assets/logo_dark.svg"
+                    src="./logo_dark.svg"
                     alt="Logo"
                   />
                 </div>

@@ -20,7 +20,7 @@ export const BlogCards = ({ blogs }: BlogCardProps) => {
                 <img
                   src={blog.cover_image}
                   alt={''}
-                  className="h-full w-full object-cover"
+                  className="h-full max-h-40 w-full object-cover"
                   loading="lazy"
                 />
               </div>

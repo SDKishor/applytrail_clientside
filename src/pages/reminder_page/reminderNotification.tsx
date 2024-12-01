@@ -45,8 +45,6 @@ const ReminderNotification: React.FC<ReminderNotificationProps> = ({
           <Button
             variant="default"
             onClick={() => {
-              console.log(message, typeof time);
-
               scheduleNotification(time, message);
               setMessage('');
               setTime('');

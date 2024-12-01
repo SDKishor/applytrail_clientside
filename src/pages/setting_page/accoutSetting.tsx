@@ -15,7 +15,7 @@ import { Label } from '@/components/ui/label';
 
 export const AccoutSetting = () => {
   const handleDeleteAccount = () => {
-    console.log('Deleting account...');
+    return;
   };
 
   return (

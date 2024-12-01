@@ -20,10 +20,6 @@ export const ReminderPage = () => {
       if (permission !== 'granted') {
         toast('Please allow notifications', {
           description: 'You need to allow notifications to use this feature.',
-          action: {
-            label: 'Undo',
-            onClick: () => console.log('Undo'),
-          },
         });
       }
     } else {
@@ -37,15 +33,13 @@ export const ReminderPage = () => {
       const reminderTime = new Date(time).getTime();
       const now = new Date().getTime();
 
-      console.log(time);
-
       if (reminderTime > now) {
         const delay = reminderTime - now;
 
         const timeoutId = window.setTimeout(() => {
           new Notification('Reminder', {
             body: message || 'You have a new reminder!',
-            icon: '/src/assets/logo_dark.svg',
+            icon: './logo_dark.svg',
           });
         }, delay);
 

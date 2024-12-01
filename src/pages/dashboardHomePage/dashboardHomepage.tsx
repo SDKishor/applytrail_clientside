@@ -1,9 +1,9 @@
 import { Separator } from '@/components/ui/separator';
 import DashBoardHomeTable, { PartialJobData } from './deshboardHomepageTable';
-import ProgressSection from './progressSection';
 import { PertialReminderData, Remindercard } from './remindercard';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { AnalyticsOverview } from '../analytics_page/analyticsOverview';
 
 const mockData: PartialJobData[] = [
   {
@@ -51,11 +51,11 @@ export const DashboardHome = () => {
       <p className="mt-2 text-muted-foreground">
         Here's a quick look at your progress.
       </p>
-      <ProgressSection />
+      <div className="my-6">
+        <AnalyticsOverview />
+      </div>
       <div className="flex justify-between">
-        <h2 className="my-2 text-lg font-bold">
-          Your recent job applications.
-        </h2>
+        <h2 className="text-lg font-bold">Your recent job applications.</h2>
         <Button variant={'link'}>
           <Link to="/dashboard/applications" className="text-primary">
             See all
