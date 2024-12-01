@@ -9,6 +9,9 @@ import { SettingPage } from '@/pages/setting_page/settingPage';
 import { ReminderPage } from '@/pages/reminder_page/reminderPage';
 import BlogPage from '@/pages/blog_page/blogPage';
 import { AnalyticsPage } from '@/pages/analytics_page/analyticsPage';
+import ProtectedRoute from '@/components/auth/ProtectedRoute';
+import { Login } from '@/pages/authPage/login';
+import { Signup } from '@/pages/authPage/signup';
 
 const route = createBrowserRouter(
   [
@@ -23,7 +26,11 @@ const route = createBrowserRouter(
         },
         {
           path: 'dashboard',
-          element: <DashboardPage />,
+          element: (
+            <ProtectedRoute isAuthenticated={true}>
+              <DashboardPage />
+            </ProtectedRoute>
+          ),
           children: [
             {
               index: true,
@@ -54,6 +61,14 @@ const route = createBrowserRouter(
         {
           path: 'blogs',
           element: <BlogPage />,
+        },
+        {
+          path: 'login',
+          element: <Login />,
+        },
+        {
+          path: 'signup',
+          element: <Signup />,
         },
       ],
     },

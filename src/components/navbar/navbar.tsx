@@ -4,11 +4,11 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { ModeToggle } from '../theme/themeModeToggle';
-import { Avatar, AvatarImage } from '../ui/avatar';
+import { useAuth, UserButton } from '@clerk/clerk-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [user] = useState<boolean>(true);
+  const { isSignedIn } = useAuth();
 
   return (
     <nav className="font-sen border-b border-primary bg-background">
@@ -44,7 +44,7 @@ const Navbar = () => {
             >
               Home
             </NavLink>
-            {user && (
+            {isSignedIn && (
               <NavLink
                 to="/dashboard"
                 className={({ isActive }) =>
@@ -69,7 +69,7 @@ const Navbar = () => {
               Blogs
             </NavLink>
             <ModeToggle />
-            {!user ? (
+            {!isSignedIn ? (
               <div className="space-x-4">
                 <Button asChild variant="outline" size="sm">
                   <NavLink to="/login">Login</NavLink>
@@ -79,9 +79,7 @@ const Navbar = () => {
                 </Button>
               </div>
             ) : (
-              <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
-              </Avatar>
+              <UserButton />
             )}
           </div>
 
@@ -108,7 +106,7 @@ const Navbar = () => {
             >
               Home
             </NavLink>
-            {user && (
+            {isSignedIn && (
               <NavLink
                 to="/dashboard"
                 className={({ isActive }) =>
@@ -132,14 +130,21 @@ const Navbar = () => {
             >
               Blogs
             </NavLink>
+
             <div className="flex w-full flex-col items-center space-y-2">
               <ModeToggle />
-              <Button asChild variant="outline" className="w-full">
-                <NavLink to="/login">Login</NavLink>
-              </Button>
-              <Button asChild className="w-full">
-                <NavLink to="/signup">Sign Up</NavLink>
-              </Button>
+              {isSignedIn ? (
+                <UserButton />
+              ) : (
+                <>
+                  <Button asChild variant="outline" className="w-full">
+                    <NavLink to="/login">Login</NavLink>
+                  </Button>
+                  <Button asChild className="w-full">
+                    <NavLink to="/signup">Sign Up</NavLink>
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         )}
