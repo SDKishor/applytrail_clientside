@@ -8,12 +8,24 @@ import {
   Tooltip,
 } from 'recharts';
 
-export function SourceBreakdown() {
+interface SourceBreakdownProps {
+  linkedIn: number;
+  companyWebsite: number;
+  jobBoard: number;
+  referrals: number;
+}
+
+export function SourceBreakdown({
+  linkedIn = 0,
+  companyWebsite = 0,
+  jobBoard = 0,
+  referrals = 0,
+}: SourceBreakdownProps) {
   const data = [
-    { name: 'LinkedIn', value: 45, color: '#0077B5' },
-    { name: 'Company Sites', value: 25, color: '#2557a7' },
-    { name: 'Referrals', value: 20, color: '#00a550' },
-    { name: 'Job Boards', value: 10, color: '#ff6b6b' },
+    { name: 'LinkedIn', value: linkedIn, color: '#0077B5' },
+    { name: 'Company Sites', value: companyWebsite, color: '#2557a7' },
+    { name: 'Referrals', value: referrals, color: '#00a550' },
+    { name: 'Job Boards', value: jobBoard, color: '#ff6b6b' },
   ];
 
   return (

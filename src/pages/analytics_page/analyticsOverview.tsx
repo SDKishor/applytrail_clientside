@@ -1,34 +1,32 @@
 import { Card, CardContent } from '@/components/ui/card';
-import {
-  ArrowUpRight,
-  ArrowDownRight,
-  Briefcase,
-  Users,
-  Calendar,
-} from 'lucide-react';
+import { Briefcase, Users, Handshake } from 'lucide-react';
 
-export function AnalyticsOverview() {
+interface AnalyticsOverviewProps {
+  application: number;
+  interview: number;
+  offer: number;
+}
+
+export function AnalyticsOverview({
+  application,
+  interview,
+  offer,
+}: AnalyticsOverviewProps) {
   const stats = [
     {
       title: 'Total Applications',
-      value: '156',
-      change: '+12%',
-      trend: 'up',
+      value: application,
       icon: Briefcase,
     },
     {
       title: 'Interview Invites',
-      value: '28',
-      change: '+8%',
-      trend: 'up',
+      value: interview,
       icon: Users,
     },
     {
-      title: 'Upcoming Interviews',
-      value: '5',
-      change: '-2',
-      trend: 'down',
-      icon: Calendar,
+      title: 'Offers Received',
+      value: offer,
+      icon: Handshake,
     },
   ];
 
@@ -37,24 +35,12 @@ export function AnalyticsOverview() {
       {stats.map((stat) => (
         <Card key={stat.title}>
           <CardContent className="p-6">
-            <div className="flex items-center justify-between">
+            <div className="flex gap-2">
               <stat.icon className="h-5 w-5 text-muted-foreground" />
-              <span
-                className={`flex items-center text-sm ${
-                  stat.trend === 'up' ? 'text-green-500' : 'text-red-500'
-                }`}
-              >
-                {stat.change}
-                {stat.trend === 'up' ? (
-                  <ArrowUpRight className="ml-1 h-4 w-4" />
-                ) : (
-                  <ArrowDownRight className="ml-1 h-4 w-4" />
-                )}
-              </span>
+              <p className="text-sm text-muted-foreground">{stat.title}</p>
             </div>
             <div className="mt-4">
               <h3 className="font-heading text-3xl font-bold">{stat.value}</h3>
-              <p className="text-sm text-muted-foreground">{stat.title}</p>
             </div>
           </CardContent>
         </Card>

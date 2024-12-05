@@ -1,12 +1,39 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 
-export function ResponseRates() {
+interface ResponseRatesProps {
+  application: number;
+  screening: number;
+  interview: number;
+  offer: number;
+}
+
+export function ResponseRates({
+  application,
+  screening,
+  interview,
+  offer,
+}: ResponseRatesProps) {
   const stages = [
-    { name: 'Applied', count: 156, total: 156, color: 'bg-blue-500' },
-    { name: 'Screening', count: 89, total: 156, color: 'bg-yellow-500' },
-    { name: 'Interview', count: 28, total: 156, color: 'bg-green-500' },
-    { name: 'Offer', count: 3, total: 156, color: 'bg-purple-500' },
+    {
+      name: 'Applied',
+      count: application,
+      total: application,
+      color: 'bg-blue-500',
+    },
+    {
+      name: 'Screening',
+      count: screening,
+      total: application,
+      color: 'bg-yellow-500',
+    },
+    {
+      name: 'Interview',
+      count: interview,
+      total: application,
+      color: 'bg-green-500',
+    },
+    { name: 'Offer', count: offer, total: application, color: 'bg-purple-500' },
   ];
 
   return (
@@ -18,7 +45,13 @@ export function ResponseRates() {
       </CardHeader>
       <CardContent className="space-y-6">
         {stages.map((stage) => {
-          const percentage = Math.round((stage.count / stage.total) * 100);
+          let percentage;
+          if (stage.total === 0) {
+            percentage = 100;
+          } else {
+            percentage = Math.round((stage.count / stage.total) * 100);
+          }
+
           return (
             <div key={stage.name} className="space-y-2">
               <div className="text-md flex items-center justify-between opacity-70">
