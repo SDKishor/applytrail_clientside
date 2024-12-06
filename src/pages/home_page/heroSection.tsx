@@ -1,6 +1,11 @@
 import { Button } from '@/components/ui/button';
+import { useUser } from '@clerk/clerk-react';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  const { isSignedIn } = useUser();
+
   return (
     <section className="my-10 py-16">
       <div className="container mx-auto flex justify-center gap-8 px-6 text-center lg:flex-row">
@@ -14,7 +19,17 @@ const HeroSection = () => {
             ApplyTrail makes your job search effortless and organized.
           </p>
           <div className="flex justify-center gap-6 lg:justify-start">
-            <Button>Get Started</Button>
+            <Button
+              onClick={() => {
+                if (isSignedIn) {
+                  navigate('/dashboard');
+                } else {
+                  navigate('/signup');
+                }
+              }}
+            >
+              Get Started
+            </Button>
             <Button
               onClick={() =>
                 document

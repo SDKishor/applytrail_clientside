@@ -52,7 +52,7 @@ export const DashboardHome = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/analytics/:${user?.id}`, {
+      .get(`http://localhost:5000/api/v1/analytics/${user?.id}`, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -69,7 +69,12 @@ export const DashboardHome = () => {
         <span className="font-bold capitalize">{user?.username ?? 'User'}</span>
         . Welcome
       </h4>
-      <h2 className="text-2xl font-bold">Overview</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-2xl font-bold">Overview</h2>
+        <Link to="/dashboard/add-application">
+          <Button className="!px-3 font-bold">Add Application</Button>
+        </Link>
+      </div>
       <p className="mt-2 text-muted-foreground">
         Here's a quick look at your progress.
       </p>

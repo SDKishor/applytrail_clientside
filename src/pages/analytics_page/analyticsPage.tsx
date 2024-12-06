@@ -34,7 +34,7 @@ export const AnalyticsPage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/analytics/:${user?.id}`, {
+      .get(`http://localhost:5000/api/v1/analytics/${user?.id}`, {
         headers: {
           'Content-Type': 'application/json',
         },

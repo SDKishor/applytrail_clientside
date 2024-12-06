@@ -12,6 +12,8 @@ import { AnalyticsPage } from '@/pages/analytics_page/analyticsPage';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import { Login } from '@/pages/authPage/login';
 import { Signup } from '@/pages/authPage/signup';
+import { AddApplicationPage } from '@/pages/add_application_page/addApplicationPage';
+import { SingleJobApplication } from '@/pages/single_job_application_page/singleJobApplication';
 
 const route = createBrowserRouter(
   [
@@ -41,6 +43,10 @@ const route = createBrowserRouter(
               element: <AllApplicationPage />,
             },
             {
+              path: 'add-application',
+              element: <AddApplicationPage />,
+            },
+            {
               path: 'analytics',
               element: <AnalyticsPage />,
             },
@@ -55,6 +61,10 @@ const route = createBrowserRouter(
             {
               path: 'settings',
               element: <SettingPage />,
+            },
+            {
+              path: 'application-details/:id',
+              element: <SingleJobApplication />,
             },
           ],
         },

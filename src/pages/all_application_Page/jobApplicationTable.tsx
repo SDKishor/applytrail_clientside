@@ -27,37 +27,29 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { IJobApplication } from '../add_application_page/addApplicationPage';
 
-export type JobApplication = {
-  id: string;
-  title: string;
-  company: string;
-  salary: string;
-  jobType: string;
-  appliedDate: string;
-  status: 'Applied' | 'Interview Scheduled' | 'Offer Received' | 'Rejected';
-};
-
-const statusColors: Record<JobApplication['status'], string> = {
+const statusColors: Record<IJobApplication['status'], string> = {
   Applied: 'bg-blue-100 text-blue-600',
-  'Interview Scheduled': 'bg-yellow-100 text-yellow-600',
-  'Offer Received': 'bg-green-100 text-green-600',
+  Interviewing: 'bg-yellow-100 text-yellow-600',
+  Offered: 'bg-green-100 text-green-600',
   Rejected: 'bg-red-100 text-red-600',
+  Accepted: 'bg-green-100 text-green-600',
 };
 
 interface JobApplicationsTableProps {
-  data: JobApplication[];
-  onEdit: (id: string) => void;
+  data: IJobApplication[];
+  onClickDetails: (id: string) => void;
 }
 
 const JobApplicationsTable: React.FC<JobApplicationsTableProps> = ({
   data,
-  onEdit,
+  onClickDetails: onClickDetails,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(5);
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortColumn, setSortColumn] = useState<keyof JobApplication | null>(
+  const [sortColumn, setSortColumn] = useState<keyof IJobApplication | null>(
     null
   );
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
@@ -97,7 +89,7 @@ const JobApplicationsTable: React.FC<JobApplicationsTableProps> = ({
   }, [sortedData, currentPage]);
 
   // Handle sorting
-  const handleSort = (column: keyof JobApplication) => {
+  const handleSort = (column: keyof IJobApplication) => {
     if (sortColumn === column) {
       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
     } else {
@@ -150,7 +142,7 @@ const JobApplicationsTable: React.FC<JobApplicationsTableProps> = ({
                     key={key}
                     onClick={
                       sortable
-                        ? () => handleSort(key as keyof JobApplication)
+                        ? () => handleSort(key as keyof IJobApplication)
                         : undefined
                     }
                     className={sortable ? 'cursor-pointer' : ''}
@@ -164,14 +156,14 @@ const JobApplicationsTable: React.FC<JobApplicationsTableProps> = ({
               </TableRow>
             </TableHeader>
             <TableBody>
-              {paginatedData.map((job) => (
-                <TableRow key={job.id}>
+              {paginatedData.map((job, index) => (
+                <TableRow key={index}>
                   <TableCell>{job.title}</TableCell>
                   <TableCell>{job.company}</TableCell>
-                  <TableCell>{job.salary}</TableCell>
+                  <TableCell>{job.salaryRange}</TableCell>
                   <TableCell>{job.jobType}</TableCell>
                   <TableCell>
-                    {new Date(job.appliedDate).toLocaleDateString()}
+                    {new Date(job.applyDate).toLocaleDateString()}
                   </TableCell>
                   <TableCell>
                     <Badge className={statusColors[job.status]}>
@@ -182,9 +174,9 @@ const JobApplicationsTable: React.FC<JobApplicationsTableProps> = ({
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => onEdit(job.id)}
+                      onClick={() => onClickDetails(job._id ?? '')}
                     >
-                      Edit
+                      Details
                     </Button>
                   </TableCell>
                 </TableRow>
