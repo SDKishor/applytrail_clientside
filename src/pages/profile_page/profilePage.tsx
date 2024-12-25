@@ -35,11 +35,14 @@ export const ProfilePage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/user-profile/${user?.id}`, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
+      .get(
+        `https://applytrail-serverside.vercel.app/api/v1/user-profile/${user?.id}`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
       .then((res) => {
         console.log(res.data);
 
@@ -73,11 +76,15 @@ export const ProfilePage = () => {
     };
 
     axios
-      .patch(`http://localhost:5000/api/v1/user-profile/update`, updatedData, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
+      .patch(
+        `https://applytrail-serverside.vercel.app/api/v1/user-profile/update`,
+        updatedData,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
       .then((res) => {
         console.log(res.data);
         setProfileData(res.data.data);

@@ -52,16 +52,20 @@ export const DashboardHome = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/analytics/${user?.id}`, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
+      .get(
+        `https://applytrail-serverside.vercel.app/api/v1/analytics/${user?.id}`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
       .then((res) => {
-        setAnalyticsdata(res.data[0]);
+        setAnalyticsdata(res.data.data[0]);
       });
   }, [user]);
 
+  console.log(analyticsdata);
   return (
     <div className="container mx-auto mt-8 min-h-svh px-4 sm:px-6 lg:px-8">
       <h4 className="mb-4 text-lg">

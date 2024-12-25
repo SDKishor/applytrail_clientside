@@ -55,7 +55,7 @@ export const SingleJobApplication = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:5000/api/v1/job-application/getsinglejobapplication/${params.id}`,
+        `https://applytrail-serverside.vercel.app/api/v1/job-application/getsinglejobapplication/${params.id}`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ export const SingleJobApplication = () => {
 
     axios
       .patch(
-        `http://localhost:5000/api/v1/job-application/update/${id}`,
+        `https://applytrail-serverside.vercel.app/api/v1/job-application/update/${id}`,
         {
           status: updatedData.status,
           interviewDate: updatedData.interviewDate,

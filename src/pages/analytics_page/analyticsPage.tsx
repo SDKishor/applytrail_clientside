@@ -34,11 +34,14 @@ export const AnalyticsPage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/analytics/${user?.id}`, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
+      .get(
+        `https://applytrail-serverside.vercel.app/api/v1/analytics/${user?.id}`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
       .then((res) => {
         setAnalyticsdata(res.data.data[0]);
       });

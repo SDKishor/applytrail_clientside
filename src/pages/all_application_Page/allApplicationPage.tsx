@@ -12,11 +12,14 @@ export const AllApplicationPage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/job-application/${user?.id}`, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
+      .get(
+        `https://applytrail-serverside.vercel.app/api/v1/job-application/${user?.id}`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
       .then((res) => {
         setTabeldata(res.data.data);
       });

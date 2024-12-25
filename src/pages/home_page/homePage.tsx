@@ -7,7 +7,6 @@ import Testimonials from './testimonialsSection';
 export default function HomePage() {
   return (
     <>
-      {/* hero section */}
       <HeroSection />
       <FeaturesSection />
       <HowItWorks />

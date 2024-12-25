@@ -40,7 +40,7 @@ export const DashboardPage = () => {
       try {
         // Add user to the database
         await axios.post(
-          'http://localhost:5000/api/v1/user-profile/create',
+          'https://applytrail-serverside.vercel.app/api/v1/user-profile/create',
           {
             profileId: user?.id,
             email: user?.emailAddresses[0]?.emailAddress,
@@ -55,7 +55,7 @@ export const DashboardPage = () => {
 
         // Add defalut analytics data of user
         await axios.post(
-          'http://localhost:5000/api/v1/analytics/create',
+          'https://applytrail-serverside.vercel.app/api/v1/analytics/create',
           {
             profileId: user?.id,
           },
